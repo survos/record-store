@@ -1,0 +1,10 @@
+{
+    "name": "survos/record-store",
+    "type": "library",
+    "description": "Provider-neutral contracts and models for application-backend record stores (Grist, Quickbase, ...). Framework-agnostic: no Symfony kernel, no container.",
+    "license": "MIT",
+    "autoload": { "psr-4": { "Survos\\RecordStore\\": "src/" } },
+    "require": { "php": "^8.5" },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
