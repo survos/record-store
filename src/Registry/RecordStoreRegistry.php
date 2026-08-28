@@ -38,6 +38,34 @@ final class RecordStoreRegistry
         return array_keys($this->applications);
     }
 
+    /** @return list<string> */
+    public function connectionNames(): array
+    {
+        return array_keys($this->connections);
+    }
+
+    /**
+     * The connections using a driver, without requiring an application to point at one.
+     *
+     * An application names a connection *and* a specific remote resource, which is the right
+     * shape for reading. A tool that creates the resource has nothing to name yet, so it can
+     * only ask which connections speak the driver -- and inferring that from the configured
+     * applications finds nothing, because there are none.
+     *
+     * @return list<string>
+     */
+    public function connectionsByDriver(string $driver): array
+    {
+        $names = [];
+        foreach ($this->connections as $name => $configuration) {
+            if (strtolower($configuration['driver']) === strtolower($driver)) {
+                $names[] = $name;
+            }
+        }
+
+        return $names;
+    }
+
     public function application(string $name): ApplicationReference
     {
         $configuration = $this->applications[$name]
