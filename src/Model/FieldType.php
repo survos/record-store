@@ -12,6 +12,9 @@ enum FieldType: string
     case Boolean = 'boolean';
     case Date = 'date';
     case DateTime = 'datetime';
+    /** A time with no date. Stores are split on whether this exists at all, so it normalizes
+     *  separately rather than being flattened into DateTime with a meaningless date part. */
+    case Time = 'time';
     case Choice = 'choice';
     case Reference = 'reference';
     case Attachment = 'attachment';
