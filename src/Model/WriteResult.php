@@ -10,7 +10,7 @@ final readonly class WriteResult
      * @param list<int|string> $createdIds
      * @param list<int|string> $updatedIds
      * @param list<int|string> $unchangedIds
-     * @param list<int|string> $affectedIds IDs returned when the provider cannot distinguish create from update.
+     * @param list<int|string> $affectedIds  IDs returned when the provider cannot distinguish create from update
      */
     public function __construct(
         public array $createdIds = [],

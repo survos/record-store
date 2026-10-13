@@ -20,9 +20,9 @@ final class RecordStoreRegistry
     private array $adapters = [];
 
     /**
-     * @param array<string, array{driver: string, options?: array<string, mixed>}> $connections
+     * @param array<string, array{driver: string, options?: array<string, mixed>}>                                                                $connections
      * @param array<string, array{connection: string, id: string, tables?: array<string, array{id: string, fields?: array<string, int|string>}>}> $applications
-     * @param iterable<AdapterFactoryInterface> $factories
+     * @param iterable<AdapterFactoryInterface>                                                                                                   $factories
      */
     public function __construct(
         private readonly array $connections,
@@ -111,11 +111,7 @@ final class RecordStoreRegistry
             }
         }
 
-        throw new RecordStoreConfigurationException(sprintf(
-            'No record-store adapter factory supports driver "%s" for connection "%s".',
-            $connection->driver,
-            $connectionName,
-        ));
+        throw new RecordStoreConfigurationException(sprintf('No record-store adapter factory supports driver "%s" for connection "%s".', $connection->driver, $connectionName));
     }
 
     public function adapterFor(ApplicationReference|TableReference $reference): RecordStoreAdapterInterface

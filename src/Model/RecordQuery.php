@@ -7,9 +7,9 @@ namespace Survos\RecordStore\Model;
 final readonly class RecordQuery
 {
     /**
-     * @param list<string>                                              $select
-     * @param array<string, list<int|float|string|bool|null>>           $filters
-     * @param list<RecordSort>                                          $sorts
+     * @param list<string>                                    $select
+     * @param array<string, list<int|float|string|bool|null>> $filters
+     * @param list<RecordSort>                                $sorts
      */
     public function __construct(
         public array $select = [],
